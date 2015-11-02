@@ -35,10 +35,11 @@ interface Database
      * @param string  $table     name of the table
      * @param mixed[] $data      data to update indexed by column name
      * @param string  $condition sql where condition
+     * @param mixed[] $parameters list of bound parameters
      *
      * @return Result
      */
-    public function update($table, array $data, $condition = '');
+    public function update($table, array $data, $condition = '', array $parameters = []);
 
     /**
      * Deletes rows from the given table.

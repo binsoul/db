@@ -60,11 +60,11 @@ class DefaultDatabase implements Database
         );
     }
 
-    public function update($table, array $data, $condition = '')
+    public function update($table, array $data, $condition = '', array $parameters = [])
     {
         return $this->executeWrite(
             $this->statementBuilder->updateStatement($table, $data),
-            $this->statementBuilder->updateParameters($data)
+            array_merge($this->statementBuilder->updateParameters($data), $parameters)
         );
     }
 
