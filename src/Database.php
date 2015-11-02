@@ -46,10 +46,11 @@ interface Database
      *
      * @param string $table     name of the table
      * @param string $condition sql where condition
+     * @param mixed[] $parameters list of bound parameters
      *
      * @return Result
      */
-    public function delete($table, $condition = '');
+    public function delete($table, $condition = '', array $parameters = []);
 
     /**
      * Executes an arbitrary statement.
