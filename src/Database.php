@@ -32,9 +32,9 @@ interface Database
     /**
      * Updates rows of the given table.
      *
-     * @param string  $table     name of the table
-     * @param mixed[] $data      data to update indexed by column name
-     * @param string  $condition sql where condition
+     * @param string  $table      name of the table
+     * @param mixed[] $data       data to update indexed by column name
+     * @param string  $condition  sql where condition
      * @param mixed[] $parameters list of bound parameters
      *
      * @return Result
@@ -44,8 +44,8 @@ interface Database
     /**
      * Deletes rows from the given table.
      *
-     * @param string $table     name of the table
-     * @param string $condition sql where condition
+     * @param string  $table      name of the table
+     * @param string  $condition  sql where condition
      * @param mixed[] $parameters list of bound parameters
      *
      * @return Result
