@@ -45,13 +45,13 @@ class Schema
     }
 
     /**
-     * Returns the table with the given name.
+     * Finds a table with the given name.
      *
      * @param string $name
      *
      * @return Table|null
      */
-    public function getTable($name)
+    public function findTable($name)
     {
         foreach ($this->tables as $table) {
             if ($table->getName() == $name) {

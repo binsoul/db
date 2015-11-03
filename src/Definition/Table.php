@@ -45,13 +45,13 @@ class Table
     }
 
     /**
-     * Returns the column with the given name.
+     * Finds a column with the given name.
      *
      * @param string $name
      *
      * @return Column|null
      */
-    public function getColumn($name)
+    public function findColumn($name)
     {
         foreach ($this->columns as $column) {
             if ($column->getName() == $name) {
