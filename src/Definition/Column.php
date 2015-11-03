@@ -116,6 +116,20 @@ class Column
     }
 
     /**
+     * Returns the initial value of the column.
+     *
+     * @return mixed
+     */
+    public function getInitialValue()
+    {
+        if ($this->hasDefaultValue) {
+            return $this->defaultValue;
+        }
+
+        return $this->isNullable ? null : $this->dataType->getInitialValue();
+    }
+
+    /**
      * Returns the comment for the column.
      *
      * @return string

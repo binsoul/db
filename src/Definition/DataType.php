@@ -48,4 +48,11 @@ interface DataType
      * @return int|null
      */
     public function getScale();
+
+    /**
+     * Returns the initial data of the type.
+     *
+     * @return mixed
+     */
+    public function getInitialValue();
 }

@@ -2,8 +2,6 @@
 
 namespace BinSoul\Db\Definition\DataType;
 
-use BinSoul\Db\Definition\DataType;
-
 /**
  * Represents the DECIMAL SQL data type.
  */
@@ -26,19 +24,18 @@ class DecimalType extends AbstractType
         $this->scale = $scale;
     }
 
-    /**
-     * @return string
-     */
     public function getSQLName()
     {
         return 'DECIMAL';
     }
 
-    /**
-     * @return string
-     */
     public function getPHPName()
     {
         return 'float';
+    }
+
+    public function getInitialValue()
+    {
+        return 0.0;
     }
 }

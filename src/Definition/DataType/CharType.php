@@ -2,8 +2,6 @@
 
 namespace BinSoul\Db\Definition\DataType;
 
-use BinSoul\Db\Definition\DataType;
-
 /**
  * Represents the CHAR SQL data type.
  */
@@ -22,27 +20,23 @@ class CharType extends AbstractType
         $this->length = $length;
     }
 
-    /**
-     * @return string
-     */
     public function getSQLName()
     {
         return 'CHAR';
     }
 
-    /**
-     * @return string
-     */
     public function getPHPName()
     {
         return 'string';
     }
 
-    /**
-     * @return int|null
-     */
     public function getLength()
     {
         return $this->length;
+    }
+
+    public function getInitialValue()
+    {
+        return str_repeat(' ', $this->length);
     }
 }

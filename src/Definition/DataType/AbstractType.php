@@ -32,4 +32,6 @@ abstract class AbstractType implements DataType
     {
         return;
     }
+
+    abstract public function getInitialValue();
 }
