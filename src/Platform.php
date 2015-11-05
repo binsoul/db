@@ -22,4 +22,13 @@ interface Platform
      * @return StatementBuilder
      */
     public function getStatementBuilder();
+
+    /**
+     * Returns a definition provider for the given connection.
+     *
+     * @param Connection $connection
+     *
+     * @return DefinitionProvider
+     */
+    public function getDefinitionProvider(Connection $connection);
 }
