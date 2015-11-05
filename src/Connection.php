@@ -22,14 +22,14 @@ interface Connection
     public function close();
 
     /**
-     * Executes an arbitrary statement using the given parameters.
+     * Executes an arbitrary statement.
      *
      * @param string  $statement
      * @param mixed[] $parameters
      *
      * @return Result
      */
-    public function execute($statement, array $parameters);
+    public function execute($statement, array $parameters = []);
 
     /**
      * Starts a new transaction.
