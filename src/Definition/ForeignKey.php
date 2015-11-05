@@ -20,11 +20,11 @@ class ForeignKey
 
     /** @var string */
     private $name;
-    /** @var string */
-    private $column;
-    /** @var string */
+    /** @var Column */
+    private $childColumn;
+    /** @var Table */
     private $parentTable;
-    /** @var string */
+    /** @var Column */
     private $parentColumn;
     /** @var string */
     private $updateAction;
@@ -35,16 +35,22 @@ class ForeignKey
      * Constructs an instance of this class.
      *
      * @param string $name
-     * @param string $column
-     * @param string $parentTable
-     * @param string $parentColumn
+     * @param Column $childColumn
+     * @param Table  $parentTable
+     * @param Column $parentColumn
      * @param string $updateAction
      * @param string $deleteAction
      */
-    public function __construct($name, $column, $parentTable, $parentColumn, $updateAction, $deleteAction)
-    {
+    public function __construct(
+        $name,
+        Column $childColumn,
+        Table $parentTable,
+        Column $parentColumn,
+        $updateAction,
+        $deleteAction
+    ) {
         $this->name = $name;
-        $this->column = $column;
+        $this->childColumn = $childColumn;
         $this->parentTable = $parentTable;
         $this->parentColumn = $parentColumn;
         $this->updateAction = $updateAction;
@@ -62,19 +68,19 @@ class ForeignKey
     }
 
     /**
-     * Returns the column.
+     * Returns the child column.
      *
-     * @return string
+     * @return Column
      */
-    public function getColumn()
+    public function getChildColumn()
     {
-        return $this->column;
+        return $this->childColumn;
     }
 
     /**
      * Returns the parent table.
      *
-     * @return string
+     * @return Table
      */
     public function getParentTable()
     {
@@ -84,7 +90,7 @@ class ForeignKey
     /**
      * Returns the parent column.
      *
-     * @return string
+     * @return Column
      */
     public function getParentColumn()
     {

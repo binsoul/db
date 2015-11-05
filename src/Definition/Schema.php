@@ -9,19 +9,15 @@ class Schema
 {
     /** @var string */
     private $name;
-    /** @var Table[] */
-    private $tables;
 
     /**
      * Constructs an instance of this class.
      *
-     * @param string  $name
-     * @param Table[] $tables
+     * @param string $name
      */
-    public function __construct($name, array $tables)
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->tables = $tables;
     }
 
     /**
@@ -32,43 +28,5 @@ class Schema
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Returns all tables of the schema.
-     *
-     * @return Table[]
-     */
-    public function getTables()
-    {
-        return $this->tables;
-    }
-
-    /**
-     * Finds a table with the given name.
-     *
-     * @param string $name
-     *
-     * @return Table|null
-     */
-    public function findTable($name)
-    {
-        foreach ($this->tables as $table) {
-            if ($table->getName() == $name) {
-                return $table;
-            }
-        }
-
-        return;
-    }
-
-    /**
-     * Adds a table to the schema definition.
-     *
-     * @param Table $table
-     */
-    public function addTable(Table $table)
-    {
-        $this->tables[] = $table;
     }
 }

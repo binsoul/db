@@ -7,13 +7,13 @@ namespace BinSoul\Db\Definition;
  */
 class PrimaryKey
 {
-    /** @var string[] */
+    /** @var Column[] */
     private $columns;
 
     /**
      * Constructs an instance of this class.
      *
-     * @param string[] $columns
+     * @param Column[] $columns
      */
     public function __construct(array $columns)
     {
@@ -23,7 +23,7 @@ class PrimaryKey
     /**
      * Returns the columns of the primary key.
      *
-     * @return \string[]
+     * @return Column[]
      */
     public function getColumns()
     {

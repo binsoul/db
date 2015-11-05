@@ -116,6 +116,26 @@ class Column
     }
 
     /**
+     * Returns the comment for the column.
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Sets the comment.
+     *
+     * @param string $comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+
+    /**
      * Returns the initial value of the column.
      *
      * @return mixed
@@ -127,15 +147,5 @@ class Column
         }
 
         return $this->isNullable ? null : $this->dataType->getInitialValue();
-    }
-
-    /**
-     * Returns the comment for the column.
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->comment;
     }
 }
