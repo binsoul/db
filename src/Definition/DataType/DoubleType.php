@@ -3,13 +3,13 @@
 namespace BinSoul\Db\Definition\DataType;
 
 /**
- * Represents the FLOAT SQL data type.
+ * Represents the DOUBLE SQL data type.
  */
-class FloatType extends AbstractType
+class DoubleType extends AbstractType
 {
     public function getSQLName()
     {
-        return 'FLOAT';
+        return 'DOUBLE';
     }
 
     public function getPHPName()

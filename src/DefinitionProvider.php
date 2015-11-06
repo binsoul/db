@@ -46,7 +46,7 @@ interface DefinitionProvider
      * @param Table  $table
      * @param Schema $schema
      *
-     * @return PrimaryKey
+     * @return PrimaryKey|null
      */
     public function getPrimaryKey(Table $table, Schema $schema = null);
 
