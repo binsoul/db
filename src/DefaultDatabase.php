@@ -63,7 +63,7 @@ class DefaultDatabase implements Database
     public function update($table, array $data, $condition = '', array $parameters = [])
     {
         return $this->executeWrite(
-            $this->statementBuilder->updateStatement($table, $data),
+            $this->statementBuilder->updateStatement($table, $data, $condition),
             array_merge($this->statementBuilder->updateParameters($data), $parameters)
         );
     }
