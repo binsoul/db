@@ -20,11 +20,11 @@ class ForeignKey
 
     /** @var string */
     private $name;
-    /** @var Column */
+    /** @var string */
     private $childColumn;
-    /** @var Table */
+    /** @var string */
     private $parentTable;
-    /** @var Column */
+    /** @var string */
     private $parentColumn;
     /** @var string */
     private $updateAction;
@@ -35,17 +35,17 @@ class ForeignKey
      * Constructs an instance of this class.
      *
      * @param string $name
-     * @param Column $childColumn
-     * @param Table  $parentTable
-     * @param Column $parentColumn
+     * @param string $childColumn
+     * @param string $parentTable
+     * @param string $parentColumn
      * @param string $updateAction
      * @param string $deleteAction
      */
     public function __construct(
         $name,
-        Column $childColumn,
-        Table $parentTable,
-        Column $parentColumn,
+        $childColumn,
+        $parentTable,
+        $parentColumn,
         $updateAction,
         $deleteAction
     ) {
@@ -70,7 +70,7 @@ class ForeignKey
     /**
      * Returns the child column.
      *
-     * @return Column
+     * @return string
      */
     public function getChildColumn()
     {
@@ -80,7 +80,7 @@ class ForeignKey
     /**
      * Returns the parent table.
      *
-     * @return Table
+     * @return string
      */
     public function getParentTable()
     {
@@ -90,7 +90,7 @@ class ForeignKey
     /**
      * Returns the parent column.
      *
-     * @return Column
+     * @return string
      */
     public function getParentColumn()
     {

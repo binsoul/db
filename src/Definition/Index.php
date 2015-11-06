@@ -9,7 +9,7 @@ class Index
 {
     /** @var string */
     private $name;
-    /** @var Column[] */
+    /** @var string[] */
     private $columns;
     /** @var string */
     private $type;
@@ -18,7 +18,7 @@ class Index
      * Constructs an instance of this class.
      *
      * @param string   $name
-     * @param Column[] $columns
+     * @param string[] $columns
      * @param string   $type
      */
     public function __construct($name, array $columns, $type = '')
@@ -41,7 +41,7 @@ class Index
     /**
      * Returns the columns of the index.
      *
-     * @return Column[]
+     * @return string[]
      */
     public function getColumns()
     {
